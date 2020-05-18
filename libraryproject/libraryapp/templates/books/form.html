@@ -1,3 +1,4 @@
+{% extends 'shared/base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -6,8 +7,7 @@
     <meta charset="utf-8">
     <title>Library</title>
 </head>
-
-<body>
+{% block content %}
     <h1>Inventory Book</h1>
 
     {% if book.id is not None %}
@@ -37,7 +37,7 @@
             <select id="location" type="text" name="location">
                 {% for library in all_libraries %}
                 <option {% if library.id == book.location_id %}selected{% endif %} value="{{ library.id }}">
-                    {{ library.title }}</option>
+                    {{ library.name }}</option>
                 {% endfor %}
             </select>
         </fieldset>
@@ -50,6 +50,5 @@
         {% endif %}
 
     </form>
-</body>
-
+{% endblock %}
 </html>
