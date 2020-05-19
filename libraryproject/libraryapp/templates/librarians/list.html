@@ -12,7 +12,7 @@
 
   <ol>
     {% for librarian in all_librarians %}
-    <li>{{ librarian.first_name }} {{ librarian.last_name }}</li>
+    <li>{{ librarian.user.first_name }} {{ librarian.user.last_name }}</li>
     {% endfor %}
   </ol>
 {% endblock %}
